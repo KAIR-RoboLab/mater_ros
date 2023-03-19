@@ -41,3 +41,16 @@ If you want only to launch RViz2 run:
 ``` bash
 ros2 launch muter_bringup rviz.launch.py
 ```
+
+## ROS interface
+
+### Publishes
+
+- `/joint_states` [*sensor_msgs/JointState*]: state of wheel joints.
+- `/muter/odom` [*nav_msgs/Odometry*]: odometry from wheels.
+- `/odometry/filtered` [*nav_msgs/Odometry*]: filtered odometry from EKF.
+
+
+### Subscribes
+
+- `/cmd_vel` [*geometry_msgs/Twist*]: commanded velocity.
