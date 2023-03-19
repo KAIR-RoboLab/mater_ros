@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>muter</name>
+  <version>0.0.0</version>
+
+  <description>Muter robot meta package</description>
+  <license>MIT</license>
+
+  <author email="krzy.wojciecho@gmail.com">Krzysztof Wojciechowski</author>
+  <maintainer email="krzy.wojciecho@gmail.com">Krzysztof Wojciechowski</maintainer>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>muter_bringup</depend>
+  <depend>muter_description</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
