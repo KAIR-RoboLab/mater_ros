@@ -1,6 +1,6 @@
 # muter_ros
 
-ROS 2 Humble packages used for Muter robot. Work together with MicroROS [muter_firmware]().
+ROS 2 Humble packages used for Muter robot. Work together with MicroROS [muter_firmware](https://github.com/KAIR-RoboLab/muter_firmware).
 
 ## Install
 
@@ -21,7 +21,7 @@ To change ROS_DOMAIN_ID you are using run
 ``` bash
 export ROS_DOMAIN_ID=my_awesome_domain_id
 ```
-Replace `my_awesome_domain_id` with number from 0 do 254. Don't forget to match the domain id with one in the firmware. Check [muter_firmware]() for more information.
+Replace `my_awesome_domain_id` with number from 0 do 254. Don't forget to match the domain id with one in the firmware. Check [muter_firmware](https://github.com/KAIR-RoboLab/muter_firmware) for more information.
 
 ## Run
 
