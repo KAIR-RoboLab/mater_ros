@@ -1,8 +1,10 @@
 from launch import LaunchDescription
+from launch.actions import IncludeLaunchDescription
 from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
-from launch.actions import  DeclareLaunchArgument
+from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
+from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.conditions import IfCondition
 import os
 
@@ -31,7 +33,6 @@ def generate_launch_description():
 
     robot_description = {"robot_description": robot_description_content}
 
-
     ekf_config = PathJoinSubstitution([muter_bringup, "config", "ekf.yaml"])
     robot_localization_node = Node(
         package="robot_localization",
@@ -54,22 +55,27 @@ def generate_launch_description():
         executable="robot_state_publisher",
         parameters=[robot_description],
     )
-    
-    rviz_config = PathJoinSubstitution([muter_bringup, "rviz", "muter.rviz"])
-    rviz2_node = Node(
-        package="rviz2",
-        executable="rviz2",
-        arguments=["-d", rviz_config],
-        condition=IfCondition(rviz)
+
+    rviz2_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution(
+                [
+                    muter_bringup,
+                    "launch",
+                    "rviz2.launch.py",
+                ]
+            )
+        ),
+        condition=IfCondition(rviz),
     )
 
     actions = [
         declare_serial_port_arg,
         declare_rviz_arg,
+        robot_state_publisher_node,
         robot_localization_node,
         micro_ros_agent_node,
-        rviz2_node,
-        robot_state_publisher_node,
+        rviz2_launch,
     ]
 
     return LaunchDescription(actions)

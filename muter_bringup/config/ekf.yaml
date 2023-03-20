@@ -1,7 +1,7 @@
 ekf_filter_node:
     ros__parameters:
         predict_to_current_time: false
-        frequency: 50.0
+        frequency: 25.0
         sensor_timeout: 0.1
         two_d_mode: true
         print_diagnostics: true
@@ -15,8 +15,8 @@ ekf_filter_node:
         odom0: /muter/odom
         odom0_config: [true, true, false, # X , Y , Z
                       false, false, true, # roll , pitch ,yaw
-                      false, false, false, # dX , dY , dZ
-                      false, false, false, # droll , dpitch ,dyaw
+                      true, true, false, # dX , dY , dZ
+                      false, false, true, # droll , dpitch ,dyaw
                       false, false, false] # ddX , ddY , ddZ
 
         odom0_queue_size: 10
