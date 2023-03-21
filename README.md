@@ -7,7 +7,7 @@ ROS 2 Humble packages used for mater robot. Work together with MicroROS [mater_f
 ``` bash
 mkdir ros2_ws
 cd ros2_ws
-git clone https://github.com/husarion/rosbot_xl_ros.git /ros2_ws/src 
+git clone https://github.com/KAIR-RoboLab/mater_ros /ros2_ws/src 
 vcs import src < src/mater/mater.repos
 
 rosdep update --rosdistro $ROS_DISTRO
