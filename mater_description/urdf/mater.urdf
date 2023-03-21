@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<robot name="mater">
+
+  <material name="brown">
+    <color rgba="0.23 0.11 0.0 1" />
+  </material>
+  <material name="yellow">
+    <color rgba="0.98 0.72 0.0 1" />
+  </material>
+
+
+  <link name="base_link" />
+
+  <link name="body_link">
+    <visual>
+      <geometry>
+        <box size="0.150 0.092 0.02" />
+      </geometry>
+      <origin rpy="0.0 0.0 0.0" xyz="0.06 0.0 0.017" />
+      <material name="brown" />
+    </visual>
+  </link>
+
+  <joint name="base_link_to_body_link" type="fixed">
+    <parent link="base_link" />
+    <child link="body_link" />
+    <origin xyz="0.0 0.0 0.0335" />
+  </joint>
+
+  <link name="left_wheel_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.025" radius="0.0335" />
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="1.57 0.0 0.0" />
+      <material name="yellow" />
+    </visual>
+  </link>
+
+  <joint name="left_wheel" type="continuous">
+    <parent link="body_link" />
+    <child link="left_wheel_link" />
+    <origin xyz="0.0 0.0725 0.0" rpy="0.0 0.0 0.0" />
+    <axis xyz="0.0 1.0 0.0" />
+  </joint>
+
+  <link name="right_wheel_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.025" radius="0.0335" />
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="1.57 0.0 0.0" />
+      <material name="yellow" />
+    </visual>
+  </link>
+
+  <joint name="right_wheel" type="continuous">
+    <parent link="body_link" />
+    <child link="right_wheel_link" />
+    <origin xyz="0.0 -0.0725 0.0" rpy="0.0 0.0 0.0" />
+    <axis xyz="0.0 1.0 0.0" />
+  </joint>
+</robot>
