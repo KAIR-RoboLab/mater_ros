@@ -42,6 +42,11 @@ If you want only to launch RViz2 run:
 ros2 launch mater_bringup rviz.launch.py
 ```
 
+If you robot is connected to different serial port use command:
+``` bash
+ros2 launch mater_bringup bringup.launch.py serial_port:=/dev/ttyMY_SERIAL_PORT
+```
+
 ## ROS interface
 
 ### Publishes

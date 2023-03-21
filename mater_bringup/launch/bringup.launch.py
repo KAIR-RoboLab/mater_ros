@@ -13,7 +13,7 @@ def generate_launch_description():
     serial_port = LaunchConfiguration("serial_port")
     declare_serial_port_arg = DeclareLaunchArgument(
         "serial_port",
-        default_value="/dev/ttyUSB1",
+        default_value="/dev/ttyS1",
         description="Which serial port to use",
     )
 
@@ -47,7 +47,7 @@ def generate_launch_description():
         executable="micro_ros_agent",
         name="micro_ros_agent",
         output="screen",
-        arguments=["serial", "--dev", "/dev/ttyUSB1", "-b", "576000"],
+        arguments=["serial", "--dev", serial_port, "-b", "576000"],
     )
 
     robot_state_publisher_node = Node(
