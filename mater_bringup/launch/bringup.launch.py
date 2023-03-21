@@ -28,7 +28,7 @@ def generate_launch_description():
     mater_description = get_package_share_directory("mater_description")
 
     rosbot_model_path = os.path.join(mater_description, "urdf", "mater.urdf")
-    with open(rosbot_model_path, 'r') as infp:
+    with open(rosbot_model_path, "r") as infp:
         robot_description_content = infp.read()
 
     robot_description = {"robot_description": robot_description_content}
