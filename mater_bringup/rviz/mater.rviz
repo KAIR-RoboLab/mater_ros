@@ -159,7 +159,7 @@ Visualization Manager:
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /muter/odom
+        Value: /mater/odom
       Value: true
   Enabled: true
   Global Options:

@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>muter_bringup</name>
+  <name>mater_bringup</name>
   <version>0.0.0</version>
 
-  <description>Muter robot description package</description>
+  <description>Mater robot description package</description>
   <license>MIT</license>
 
   <author email="krzy.wojciecho@gmail.com">Krzysztof Wojciechowski</author>
@@ -12,12 +12,10 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <exec_depend>muter_description</exec_depend>
+  <exec_depend>mater_description</exec_depend>
   <exec_depend>micro_ros_agent</exec_depend>
-  <exec_depend>rviz2</exec_depend>
   <exec_depend>launch</exec_depend>
   <exec_depend>launch_ros</exec_depend>
-  <exec_depend>rosbot_controller</exec_depend>
   <exec_depend>robot_localization</exec_depend>
 
   <export>

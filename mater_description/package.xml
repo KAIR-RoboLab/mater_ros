@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>muter_description</name>
+  <name>mater_description</name>
   <version>0.0.0</version>
 
-  <description>Muter robot description package</description>
+  <description>Mater robot description package</description>
   <license>MIT</license>
 
   <author email="krzy.wojciecho@gmail.com">Krzysztof Wojciechowski</author>

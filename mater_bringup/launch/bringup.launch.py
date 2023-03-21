@@ -24,16 +24,16 @@ def generate_launch_description():
         description="Whether to launch RViz2",
     )
 
-    muter_bringup = get_package_share_directory("muter_bringup")
-    muter_description = get_package_share_directory("muter_description")
+    mater_bringup = get_package_share_directory("mater_bringup")
+    mater_description = get_package_share_directory("mater_description")
 
-    rosbot_model_path = os.path.join(muter_description, "urdf", "muter.urdf")
+    rosbot_model_path = os.path.join(mater_description, "urdf", "mater.urdf")
     with open(rosbot_model_path, 'r') as infp:
         robot_description_content = infp.read()
 
     robot_description = {"robot_description": robot_description_content}
 
-    ekf_config = PathJoinSubstitution([muter_bringup, "config", "ekf.yaml"])
+    ekf_config = PathJoinSubstitution([mater_bringup, "config", "ekf.yaml"])
     robot_localization_node = Node(
         package="robot_localization",
         executable="ekf_node",
@@ -60,7 +60,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             PathJoinSubstitution(
                 [
-                    muter_bringup,
+                    mater_bringup,
                     "launch",
                     "rviz2.launch.py",
                 ]

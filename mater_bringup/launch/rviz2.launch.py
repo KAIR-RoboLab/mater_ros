@@ -6,9 +6,9 @@ import os
 
 
 def generate_launch_description():
-    muter_bringup = get_package_share_directory("muter_bringup")
+    mater_bringup = get_package_share_directory("mater_bringup")
     
-    rviz_config = PathJoinSubstitution([muter_bringup, "rviz", "muter.rviz"])
+    rviz_config = PathJoinSubstitution([mater_bringup, "rviz", "mater.rviz"])
     rviz2_node = Node(
         package="rviz2",
         executable="rviz2",

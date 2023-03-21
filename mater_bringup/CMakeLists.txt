@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.8)
-project(muter_description)
+project(mater_bringup)
 
 find_package(ament_cmake REQUIRED)
 
-install(
-  DIRECTORY
-  urdf
+install(DIRECTORY
+  launch
+  config
+  rviz
   DESTINATION share/${PROJECT_NAME}
 )
 
-ament_export_dependencies(${THIS_PACKAGE_INCLUDE_DEPENDS})
 ament_package()
